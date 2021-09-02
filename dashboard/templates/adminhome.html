@@ -1,0 +1,15 @@
+<html>
+        <head>
+        <h1 align="center">Supply Chain Management Systems</h1><hr><hr>
+        <h1 align="center"> Admin Home</h1>
+        </head>
+
+        <body>
+                        <h2 align="center">Welcome {{aname}}</h2>
+                        <a href="{% url 'welcome_main_page' %}"><button>Welcome Page</button> </a>  <br><br>
+                        <a href="{% url 'viewusers' %}"><button>View Users</button></a> <br><br>
+                        <a href="{% url 'viewsuppliers' %}"><button>View Suppliers</button></a> <br><br>
+                        <a href="{% url 'vieworders' %}"><button>View Orders </button></a> <br><br>
+                        <a href="{% url 'adminlogin' %}"><button>Log Out</button></a> <br><br>
+        </body>
+</html>

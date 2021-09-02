@@ -1,0 +1,60 @@
+.lmod ul
+{
+    color:red;
+}
+
+.lmod ul li a
+{
+    text-decoration: none;
+    color: red;
+}
+
+.wrapper1 ul
+{
+    list-style: none;
+    margin-top: 2%;
+}
+
+.wrapper1 ul li
+{
+    background: grey;
+    width: 100px;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/static/images/main_bg_1.jpg") 50% 0 no-repeat fixed;
+    border-radius: 30px;
+    border: 1px solid #73AD21;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+
+
+    line-height: 20px;
+    text-align:center;
+    float: left;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    font-family:normal;
+}
+
+.wrapper1 ul li: :hover
+{
+    background: crimson;
+}
+
+
+.wrapper1 ul ul 
+{
+    display: none;
+}
+
+.wrapper1 ul li:hover > ul
+{
+    display: block; 
+}
+
+.wrapper1 ul ul ul
+{
+    margin-left: 170px;
+    top: 0;
+    position: absolute;
+}

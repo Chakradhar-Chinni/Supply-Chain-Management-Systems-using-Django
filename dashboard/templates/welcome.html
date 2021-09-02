@@ -1,0 +1,41 @@
+{% load static %}
+<html>  
+    <head>  
+            <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"> 
+            <h1 style="text-align: center";>Supply Chain Management</h1>
+    </head> 
+            
+    <body>
+        <header>
+            <div class="wrapper">
+                <div class="logo">
+                    <img src ="static/images/logo.jpg" alt="Image Path : static/images/welcome_bg.png"> 
+                    
+                </div>
+                <ul class="nav-area">
+                    <li> <a href="#">Home</a> </li>
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Services</a> </li>
+                    <li> <a href="{% url 'logintype' %}">Login</a> </li>          
+                </ul>
+            </div>
+            <div class="welcome-text">                             
+                <h1>Comfort Beyond Expectation</h1>                
+                <a href="#">Contact</a>
+            </div>
+        </header>
+        <br><br>
+        <h1 align="center">Git Push</h1>  
+
+        <a href ="{% url 'userlogin' %}"><button>User Login</button></a><br><br>
+        <a href ="{% url 'userregistration' %}"><button>User Registration</button></a><br><br>
+        
+        <a href ="{% url 'supplierlogin' %}"><button>Supplier Login</button></a><br><br>
+        <a href ="{% url 'supplierregistration' %}"><button>Supplier Registration</button></a><br><br>
+    
+        <a href ="{% url 'adminlogin' %}"><button>Admin Login</button></a><br><br>
+        <a href ="{% url 'adminregistration' %}"><button>Admin Registration</button></a><br><br>
+
+
+    </body>
+</html>

@@ -1,0 +1,43 @@
+{% load static%}
+<html>
+        <head>
+        <link href="{% static 'css/userhomepage.css' %}" rel="stylesheet" type="text/css">
+        <h1 align="center">Supply Chain Management Systems</h1><hr><hr>
+        <h1 align="center"> User Home</h1>
+        </head>
+             
+        <body>
+            <header>
+                <div clas="wrapper">
+                        <h2 align="center">Welcome {{uname}}</h2> <br><br>
+                       <!-- <h2 align="center">{{uname}} id is: {{uid}}</h2> <br><br> -->
+
+        
+                        <ul class="nav-area">
+                                <li> <form  action="{% url 'order' %}">
+                                        <input type = "submit" value = "Order"> 
+                                     </form>
+                                 </li>
+                                <li>
+                                   <form action="userorders/{{uid}}">
+                                      <input type = "submit" value = "View My Orders"> 
+                                   </form>
+                                </li>
+                                <li>  
+                                        <a href="{% url 'userlogin' %}"><button>Log Out</button></a><br><br>
+                                </li>
+                                     
+                        </ul>
+                        <form  action="{% url 'order' %}">
+                                <input type = "submit" value = "Order"> 
+                        </form>                        
+                        
+                        <form action="userorders/{{uid}}">
+                        <input type = "submit" value = "View My Orders"> 
+                        </form>                                      
+
+                        <a href="{% url 'userlogin' %}"><button>Log Out</button></a><br><br>                
+                </div>
+             </header>
+        </body>
+</html> 

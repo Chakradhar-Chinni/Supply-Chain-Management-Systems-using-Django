@@ -1,0 +1,26 @@
+<html>
+        <head>
+        <h1 align = "center">Pharmacy store flask</h1><hr><hr>
+        </head>
+        
+        <body bgcolor="cyan">
+        <br><br><br>
+         <form align="center" method='post' action="{% url 'checkadmin1' %}"> 
+                {% csrf_token %}  
+                <table align=center>
+                    <tr>
+                        <td> Enter User Name</td>
+                        <td> <input type="text" name="aname" required> </td>
+                    </tr>                
+                    <tr>
+                        <td>Enter User Password </td>
+                        <td> <input type="password" name="apwd" required> </td> 
+                    </tr>
+                            <tr align="center">
+                            <td ><input type="submit" value="Login"></td>
+                            <td ><input type="reset" value="Clear"></td>
+                    </tr>
+                </table>
+              </form>
+        </body>
+</html>

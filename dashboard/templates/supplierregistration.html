@@ -1,0 +1,25 @@
+ {% load crispy_forms_tags %}
+ {% load static%}
+ <html>
+        <head>
+        <link href="{% static 'css/regpage.css' %}" rel="stylesheet" type="text/css">
+        <h1 align="center">Supply Chain Management Systems</h1><hr><hr>
+        <h1 align="center"> Supplier Registration</h1>    
+        </head>
+
+        <body>
+        <a href="{% url 'welcome_main_page' %}"><button>Welcome Page</button></a> <br><br>
+           <div class="wrapper">
+                <form method="post" align="center">
+                        {% csrf_token %} 
+                        
+                        {% for field in form %}
+
+                                {{field | as_crispy_field}}
+                
+                        {% endfor %}
+                        <br><input type ="submit" value="Submit">
+                </form>
+           </div>
+        </body>
+</html>

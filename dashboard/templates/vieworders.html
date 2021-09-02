@@ -1,0 +1,53 @@
+{% load crispy_forms_tags %}
+<html>
+    <head>
+        <h2 align="center">Supply Chain Management Systems</h2><hr><hr>
+            <h3 style="text-align:center;color:blue">All Orders</h3>
+    </head>
+ 
+    <body>
+    <a href="{% url 'adminlogin' %}"><button>Log Out</button></a><br><br>
+    <a href="{% url 'adminhome' %}"><button>Admin Home</button></a>
+
+         <table align="center" border=2px width=1000>
+            <tr>
+                <th> Order Id</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>State</th>
+                <th>Issue Supplier</th>
+                <th>Supplier Status</th>                             
+                <th>User Id of Customer</th>
+            <tr> 
+
+            {% for order  in orders%}
+            <tr align="center">
+                    <td>{{order.id}}</td>
+                    <td>{{order.ProductName}}</td> 
+                    <td>{{order.Quantity}}</td>     
+                    <td>{{order.State}}</td> 
+                    <td align="center"> 
+                            <form method="POST" action = "issuesupplier/{{order.id}}"> 
+                            {% csrf_token %}
+                                <label for="supplier">Choose a Supplier</label>
+                                <select name="sid" required>     
+                                <option value="">-----</option>
+                                {% for supplier in suppliers %}
+                                    <option value="{{supplier.id}}">{{supplier.id}}</option>
+                                {% endfor %}
+                                </select>
+                                <input type="submit" value="Assign">
+                            </form>
+                    </td>
+                    <td>{{order.SupplierStatus}}</td> 
+                    <td>{{order.UserId}}</td>
+            </tr>
+                {% empty %}
+                <h3 align="center">No records found</h3>
+            {% endfor %}
+        </table>
+
+        <h3 align="center">Total Orders: {{count}}</h3>
+    </body>
+
+</html>

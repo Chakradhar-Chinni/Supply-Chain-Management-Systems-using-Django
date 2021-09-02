@@ -1,0 +1,26 @@
+{% load static%}
+<html>
+        <head>
+        <link href="{% static 'css/loginpage.css' %}" rel="stylesheet" type="text/css"> 
+        <h1 align="center">Supply Chain Management Systems</h1><hr><hr>
+        <h1 align="center"> Supplier Login</h1>
+        </head>
+
+        <body>
+        <a href="{% url 'welcome_main_page' %}"><button>Welcome Page</button></a> <br><br>
+            <div class="wrapper">
+                <h1>Sign In</h1>
+                <form method='post' action="{% url 'checksupplier' %}">
+                    {% csrf_token %}
+                    <input type="text" name="sname" placeholder="UserName" required>
+                    <input type="password" name="spwd" placeholder="Password" required>
+                    <input type="submit" value="Login">
+                </form>
+                <div class="bottom-text">
+                    <input type="checkbox" name="remember" checked="checked"> Remember me
+                    <a href ="#">Forgot Password ?</a>
+                </div>
+            </div>
+        </body>
+
+</html> 

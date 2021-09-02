@@ -1,0 +1,49 @@
+{% load crispy_forms_tags %}
+<html>
+    <head>
+        <h2 align="center">CRUD</h2><hr><hr>
+            <h3 align="center">Registered Suppliers</h3>
+    </head>
+ 
+    <body>
+    <a href="{% url 'adminlogin' %}"><button>Log Out</button></a><br><br>
+    <a href="{% url 'adminhome' %}"><button>Admin Home</button></a>
+
+         <table align="center" border=2px width=1000>           
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>User Name</th>
+                <th>Contact Number</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+
+            <tr> 
+
+            {% for user in users%}
+            <tr>
+                    <td>{{user.id}}</td>  
+                    <td>{{user.Name}}</td>
+                    <td>{{user.UserName}}</td>
+                    <td>{{user.ContactNo}}</td>
+                    <td>{{user.Email}}</td>
+                    <td>{{user.Password}}</td>
+                    <td align = "center">
+                        <a href = "deletesupplier/{{user.id}}" > <button>Delete Supplier</button> </a>
+                    </td>    
+            </tr>
+                {% empty %}
+                <h3 align="center">No records found</h3>
+            {% endfor %}
+            
+        </table>
+
+        <h3 align="center">Total Registered Users: {{count}}</h3>
+        <hr><hr>
+
+        
+
+    </body>
+
+</html>

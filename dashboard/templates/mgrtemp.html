@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+
+<h1 align = center>Manager Dashboard</h1>
+
+<aside>
+Manager Analytics
+</aside>
+
+<br>
+<a href ="{% url 'ud' %}">User Dashboard</a>  <br><br>
+<a href ="{% url 'au' %}">Approve Users</a>
+<br><br><br>
+
+<form method="post">
+                {% csrf_token %} 
+                    
+                {% for field in form %}
+
+                         {{field | as_crispy_field}}
+               
+                {% endfor %}
+                <input type ="submit" value="Submit">
+            </form>

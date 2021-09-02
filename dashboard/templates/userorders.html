@@ -1,0 +1,36 @@
+<html>
+        <head>
+            <h1 align = "center">Supply Chain Management Systems</h1><hr><hr>
+        </head>
+
+        <body>
+            <h2 align = "center">User Orders Page</h2>
+
+
+            <table align="center" border=2px width=1000>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>State</th>
+                <th>Supplier Status</th>
+                <th>Order Status</th>
+            <tr> 
+
+            {% for order  in orders%}  
+            <tr style="text-align:center;color:   #00b300
+">
+                    <td>{{order.id}}</td>
+                    <td>{{order.ProductName}}</td>
+                    <td>{{order.Quantity}}</td>
+                    <td>{{order.State}}</td>
+                    <td>{{order.SupplierStatus}}</td>
+                    <td>{{order.OrderStatus}}</td>
+            </tr>
+                {% empty %}
+                <h3 align="center">No records found</h3>
+            {% endfor %}
+        </table>
+        </body>
+
+</html>

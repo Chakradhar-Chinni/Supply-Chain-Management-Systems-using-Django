@@ -1,0 +1,43 @@
+
+header
+{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/static/images/main_bg_1.jpg") 50% 0 no-repeat fixed;
+    height : 100vh;
+    -webkit-background-size : cover;
+    background-size: cover;
+    background-position: center center;
+    position : relative;
+}
+.nav-area
+{
+        float: right;
+        lsit-style: none;
+        margin-top : 30px;
+}
+
+.nav-area li
+{
+    display : inline-block;
+}
+
+.nav-area li a
+{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family : poppins;
+    font-size: 16px;
+}
+
+.nav-area li a:hover
+{
+    background: $fff;
+    color: #333;
+}
+
+h2
+{
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}

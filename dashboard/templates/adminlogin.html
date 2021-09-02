@@ -1,0 +1,27 @@
+<html>
+    <head>
+    <h1 align="center">Supply Chain Management Systems</h1><hr><hr>
+        <h1 align="center"> Admin Login</h1>
+    </head>
+
+    <body>
+    <a href="{% url 'welcome_main_page' %}"><button>Welcome Page</button></a> <br><br>
+        <form method='post' action="{% url 'checkadmin' %}"> 
+                {% csrf_token %}  
+                <table align=center>
+                    <tr>
+                        <td> Enter User Name</td>
+                        <td> <input type="text" name="aname" required> </td>
+                    </tr>                
+                    <tr>
+                        <td>Enter User Password </td>
+                        <td> <input type="password" name="apwd" required> </td> 
+                    </tr>
+                            <tr align="center">
+                            <td ><input type="submit" value="Login"></td>
+                            <td ><input type="reset" value="Clear"></td>
+                    </tr>
+                </table>
+              </form>
+    </body>
+</html>

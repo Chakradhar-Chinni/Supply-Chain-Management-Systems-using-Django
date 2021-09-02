@@ -1,0 +1,40 @@
+<html>
+    <head>
+            <h1 align="center">users page to be approved by Manager</h1>
+    </head>
+
+    <body>
+    <br>
+    <a href ="{% url 'md' %}">Manager Dashboard</a>
+    <br><br><br>
+            <table align="center" border=2px width=800>
+            <tr>
+                <th>Id</th>
+                <th>User Name</th>
+                <th>Number</th>
+                <th>Status</th>
+                <th>Category</th>
+            <tr> 
+
+            {% for user in users%}
+            <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.UserName}}</td>
+                    <td>{{user.Number}}</td>  
+                    <td align="center">
+                        <form action="ua1/{{user.id}}" method='POST'>
+                        {% csrf_token %} 
+                             <input type="submit" name="one" value="Accept"></input>
+                             <input type="submit" name="one" value="Reject"></input>
+                        </form>          
+                    </td>  
+            </tr>
+                {% empty %}
+                <h3 align="center">No records found</h3>
+            {% endfor %}
+            
+        </table>
+    </body>
+
+
+</html>

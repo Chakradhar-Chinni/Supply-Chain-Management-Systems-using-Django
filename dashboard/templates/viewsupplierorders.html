@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <h1 align="center">Supply Chain Management Systems</h1><hr><hr>
+    </head>
+
+    <body>
+        <table align="center" border=2px width=1000>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>State</th>
+                <th>User Id</th>
+                <th>Action</th>              
+            <tr> 
+
+            {% for sorder in sorders%}
+            <tr>
+                    <td>{{sorder.id}}</td>  
+                    <td>{{sorder.ProductName}}</td>
+                    <td>{{sorder.Quantity}}</td>
+                    <td>{{sorder.State}}</td>
+                    <td>{{sorder.UserId}}</td>
+                    <td align="center">
+                        <a href = "deliver/{{sorder.id}}" > <button>Deliver</button> </a>
+                    </td>
+           </tr>
+                {% empty %}
+                <h3 align="center">No records found</h3>
+            {% endfor %}
+            
+        </table>
+
+
+
+
+    </body>
+</html>

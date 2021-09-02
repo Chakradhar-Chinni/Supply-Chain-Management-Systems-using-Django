@@ -1,0 +1,37 @@
+<html>
+    <head>
+            <h1 align="center">All Users Analysis</h1>
+    </head>
+
+    <body>
+    <br>
+    <a href ="{% url 'ud' %}">Users Dashboard</a>
+    <br><br><br>
+            <table align="center" border=2px width=800>
+            <tr>
+                <th>Id</th>
+                <th>User Name</th>
+                <th>Number</th>
+                <th>Status</th>
+                <th>Tag</th>
+            <tr> 
+
+            {% for user in users%}
+            <tr align="center">
+                    <td>{{user.id}}</td>
+                    <td>{{user.UserName}}</td>
+                    <td>{{user.Number}}</td>  
+                    <td>{{user.Status}}</td>  
+                    <td>        
+                            {{name}}
+                    </td>
+            </tr>
+                {% empty %}
+                <h3 align="center">No records found</h3>
+            {% endfor %}
+            
+        </table>
+    </body>
+
+
+</html>
